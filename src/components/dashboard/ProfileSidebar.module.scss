@@ -1,0 +1,205 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.editBtn {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    border: 4px solid var(--card-bg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px dashed rgba(103, 146, 103, 0.4);
+        top: -8px;
+        left: -8px;
+        padding: 6px;
+    }
+}
+
+.name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.college {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.editInput {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    background: var(--bg-color);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+
+    &:focus {
+        border-color: var(--accent-purple);
+        outline: none;
+    }
+}
+
+.editActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.saveBtn,
+.cancelBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.saveBtn {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border: 1px solid var(--text-primary);
+
+    &:hover:not(:disabled) {
+        opacity: 0.9;
+    }
+}
+
+.cancelBtn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+
+    &:hover:not(:disabled) {
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--text-primary);
+    }
+}
+
+[data-theme="dark"] .cancelBtn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.calendarWidget {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.calHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+
+    button {
+        color: var(--text-secondary);
+
+        &:hover {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.calGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.dayName {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.dateCell {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+
+    &.active {
+        background: #1e1e24;
+        /* Dark pill in mockup */
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+}
+
+[data-theme="dark"] .dateCell.active {
+    background: var(--accent-primary);
+    color: #121212;
+}

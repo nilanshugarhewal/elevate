@@ -1,0 +1,43 @@
+.appContainer {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.sidebarWrapper {
+    width: 90px;
+    /* Slim sidebar from mockup */
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContent {
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2rem 3rem;
+
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    [data-theme="dark"] &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}

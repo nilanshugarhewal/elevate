@@ -1,0 +1,134 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.greetingSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.greeting {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.highlight {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.actionsSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    border-radius: 30px;
+    padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all var(--transition-speed) ease;
+
+    &:focus-within {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+[data-theme="dark"] .searchBar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    &:focus-within {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.searchInput {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+
+    &::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.7;
+    }
+}
+
+.searchBtn {
+    background: #1e1e24;
+    /* Dark button matching mockup */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+[data-theme="dark"] .searchBtn {
+    background: var(--accent-primary);
+}
+
+.iconBtn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        transform: translateY(-2px);
+    }
+}
+
+[data-theme="dark"] .iconBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.notificationDot {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+    border: 2px solid var(--card-bg);
+}

@@ -1,0 +1,82 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 400px;
+    padding: 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.copyBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: all var(--transition-speed);
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+}
+
+[data-theme="dark"] .copyBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.saveBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: all var(--transition-speed);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.textArea {
+    flex-grow: 1;
+    width: 100%;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    outline: none;
+
+    &::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.6;
+    }
+}

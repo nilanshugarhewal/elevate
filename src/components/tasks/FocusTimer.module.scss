@@ -1,0 +1,206 @@
+.wrapper {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.settingsBtn {
+    color: var(--text-secondary);
+    transition: all 0.2s;
+
+    &:hover {
+        color: var(--text-primary);
+        transform: rotate(45deg);
+    }
+}
+
+.statusInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.modeStudy {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+}
+
+.modeBreak {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+.cycleInfo {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.settingsPanel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    flex-grow: 1;
+}
+
+.settingGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        border: 1px solid var(--card-border);
+        background: var(--bg-color);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        outline: none;
+
+        &:focus {
+            border-color: var(--accent-purple);
+        }
+    }
+}
+
+.saveBtn {
+    margin-top: auto;
+    padding: 0.85rem;
+    border-radius: 10px;
+    background: var(--text-primary);
+    color: var(--bg-color);
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.2s;
+
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+}
+
+.timerCircle {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.progressRing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.ringTrack {
+    fill: none;
+    stroke: var(--card-border);
+    stroke-width: 4;
+}
+
+.ringFill {
+    fill: none;
+    stroke: var(--accent-purple);
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear, stroke 0.5s ease;
+}
+
+.ringBreak {
+    stroke: var(--accent-green);
+}
+
+.timeDisplay {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-primary);
+    z-index: 2;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.controlBtn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.btnBreak {
+    background: var(--accent-green);
+    color: white;
+}
+
+.controlBtnSecondary {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+    &:hover {
+        background: var(--bg-color);
+        color: var(--text-primary);
+        transform: rotate(-30deg);
+    }
+}

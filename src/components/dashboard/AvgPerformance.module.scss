@@ -1,0 +1,110 @@
+.wrapper {
+    padding: 1.5rem;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.resetBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4em 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    background: rgba(0, 0, 0, 0.05);
+
+    &:hover:not(:disabled) {
+        color: var(--text-primary);
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+[data-theme="dark"] .resetBtn {
+    background: rgba(255, 255, 255, 0.05);
+
+    &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.scoreRow {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.mainScore {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.trendDown {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-red);
+    background: rgba(255, 173, 173, 0.15);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.barsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.barGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.barHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.progressTrack {
+    height: 12px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1s ease-out;
+}

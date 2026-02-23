@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String         @id @default(uuid())
+  name           String?
+  email          String         @unique
+  password       String?
+  image          String?
+  collegeName    String?
+  themePreference String        @default("dark")
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  
+  currentStreak  Int            @default(0)
+  lastLoginDate  DateTime?
+  hoursSpentMode String         @default("manual") // "manual" or "automatic"
+
+  courses        Course[]
+  tasks          Task[]
+  studySessions  StudySession[]
+  events         Event[]
+  moodEntries    MoodEntry[]
+}
+
+model Course {
+  id        String   @id @default(uuid())
+  name      String
+  status    String   @default("active") // "active" or "completed"
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Task {
+  id          String    @id @default(uuid())
+  title       String
+  subject     String?
+  dueDate     DateTime?
+  isCompleted Boolean   @default(false)
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model StudySession {
+  id              String   @id @default(uuid())
+  subject         String
+  durationMinutes Int
+  type            String   @default("study") // "study" or "exam"
+  date            DateTime @default(now())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  title       String
+  date        DateTime
+  type        String   @default("class") // "class" or "exam"
+  link        String?
+  courseName  String?
+  time        String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+}
+
+model MoodEntry {
+  id        String   @id @default(uuid())
+  moodType  String   // "happy", "focused", "tired", "sad"
+  date      DateTime @default(now())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

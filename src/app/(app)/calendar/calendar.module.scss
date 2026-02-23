@@ -1,0 +1,188 @@
+.calendarContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 4rem);
+}
+
+.header {
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        letter-spacing: -0.5px;
+        margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: var(--text-secondary);
+    }
+}
+
+.calendarWidget {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.navGroup {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navBtn {
+    color: var(--text-secondary);
+    transition: all 0.2s;
+
+    &:hover {
+        color: var(--text-primary);
+    }
+}
+
+.monthLabel {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    width: 200px;
+    text-align: center;
+}
+
+.legend {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.examDot {
+    background-color: var(--accent-red);
+}
+
+.taskDot {
+    background-color: var(--accent-green);
+}
+
+.daysRow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.dayColName {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+.cell {
+    border-bottom: 1px solid var(--card-border);
+    border-right: 1px solid var(--card-border);
+    padding: 0.75rem;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &:nth-child(7n) {
+        border-right: none;
+    }
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.02);
+    }
+}
+
+[data-theme="dark"] .cell:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.disabled {
+    color: var(--text-secondary);
+    opacity: 0.4;
+}
+
+.selected .dateNumber {
+    background: #1e1e24;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] .selected .dateNumber {
+    background: var(--accent-primary);
+    color: #121212;
+}
+
+.dateNumber {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.eventsArea {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.eventBadge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    color: white;
+}
+
+.examBadge {
+    background-color: var(--accent-red);
+}
+
+.taskBadge {
+    background-color: var(--accent-green);
+}
