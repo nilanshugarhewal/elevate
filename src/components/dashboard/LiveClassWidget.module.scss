@@ -4,6 +4,10 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
 }
 
 .header {
