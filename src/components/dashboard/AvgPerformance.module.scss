@@ -3,6 +3,11 @@
     height: 380px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        height: 320px;
+    }
 }
 
 .headerRow {

@@ -88,6 +88,18 @@
     }
 }
 
+@media (max-width: 768px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .statCard {
+        padding: 1rem;
+        min-height: 120px;
+    }
+}
+
 .clickableCard {
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;

@@ -3,6 +3,10 @@
     flex-direction: column;
     width: 100%;
     height: calc(100vh - 4rem);
+
+    @media (max-width: 768px) {
+        height: auto;
+    }
 }
 
 .header {
